@@ -1,0 +1,26 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-4);
+  line-height: 1.1;
+}
+
+h1 { font-size: clamp(2.5rem, 5vw, 5rem); }
+h2 { font-size: clamp(2rem, 4vw, 3.5rem); }
+h3 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+h4 { font-size: clamp(1.25rem, 2vw, 1.75rem); }
+
+p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.text-gold { color: var(--accent-gold); }
+.text-center { text-align: center; }
+.text-uppercase { text-transform: uppercase; }
+.text-sm { font-size: 0.875rem; }
+.text-lg { font-size: 1.125rem; }

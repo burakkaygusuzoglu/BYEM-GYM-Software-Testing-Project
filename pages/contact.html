@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | BYEM GYM</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <script type="module" src="/js/core/app.js" defer></script>
+</head>
+<body>
+  <!-- Navbar will be injected here -->
+  <div id="navbar-placeholder"></div>
+
+  <main id="main-content" style="padding-top: 5rem;">
+    <section class="section">
+      <div class="container">
+        
+        <div class="grid md:grid-cols-2" style="gap: var(--space-12);">
+          
+          <!-- Contact Info -->
+          <div>
+            <h2 class="text-gold">Get In Touch</h2>
+            <p class="text-secondary" style="margin-bottom: var(--space-8);">Have inquiries regarding memberships, personal training programs, or brand partnerships? Send us a message.</p>
+
+            <address style="margin-bottom: var(--space-6); font-style: normal;">
+              <strong style="display: block; margin-bottom: var(--space-2); color: var(--text-primary);">Headquarters</strong>
+              123 Elite Performance Blvd.<br/>
+              Apt 1B, Austin, TX 78701
+            </address>
+
+            <div style="color: var(--text-secondary);">
+              <p style="margin-bottom: var(--space-2);">Support: concirge@byemgym.com</p>
+              <p>Phone: +1 800 293 6496</p>
+            </div>
+          </div>
+
+          <!-- Form Area -->
+          <div class="card">
+            <h3 style="margin-bottom: var(--space-6);">Send a Message</h3>
+            <form id="contactForm">
+              
+              <div class="form-group">
+                <label class="form-label" for="c-name">Full Name</label>
+                <input class="form-control" type="text" id="c-name" placeholder="John Doe" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="c-email">Email Address</label>
+                <input class="form-control" type="email" id="c-email" placeholder="john@example.com" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="c-message">How can we help?</label>
+                <textarea class="form-control" id="c-message" rows="5" placeholder="I'm interested in the VIP Black Card..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="margin-top: var(--space-4);">Submit Inquiry</button>
+
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer will be injected here -->
+  <div id="footer-placeholder"></div>
+  <script type="module">
+    import { ToastService } from '../js/services/toastService.js';
+    document.getElementById('contactForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      ToastService.show('Message sent successfully. We will be in touch shortly.', 'success');
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>

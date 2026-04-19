@@ -1,0 +1,101 @@
+/* ========================================================
+   TOAST NOTIFICATION SYSTEM
+   ======================================================== */
+
+#byem-toast-container {
+  position: fixed;
+  bottom: var(--space-6);
+  right: var(--space-6);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  pointer-events: none;
+}
+
+.byem-toast {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: var(--surface-charcoal-glass);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,0.05);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  
+  /* Initial State for Animation */
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  pointer-events: auto;
+}
+
+.byem-toast.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.toast-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.toast-success .toast-icon {
+  background: rgba(16, 185, 129, 0.15); /* text-emerald-500 */
+  color: #10b981;
+}
+
+.toast-error .toast-icon {
+  background: rgba(239, 68, 68, 0.15); /* text-red-500 */
+  color: #ef4444;
+}
+
+.toast-info .toast-icon {
+  background: rgba(59, 130, 246, 0.15); /* text-blue-500 */
+  color: #3b82f6;
+}
+
+.toast-message {
+  flex-grow: 1;
+  letter-spacing: 0.3px;
+}
+
+.toast-close {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1.25rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 var(--space-2);
+  margin-right: calc(var(--space-2) * -1);
+  transition: color var(--transition-fast);
+}
+
+.toast-close:hover {
+  color: var(--text-primary);
+}
+
+/* Mobile Breakpoint for Toast */
+@media (max-width: 600px) {
+  #byem-toast-container {
+    bottom: var(--space-4);
+    left: var(--space-4);
+    right: var(--space-4);
+  }
+  .byem-toast {
+    width: 100%;
+  }
+}

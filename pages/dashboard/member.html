@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/main.css">
+  <script type="module" src="/js/core/app.js" defer></script>
+  <script type="module" src="/js/pages/dashboard.js" defer></script>
+  <title>Dashboard | BYEM GYM</title>
+</head>
+<body>
+  <!-- Navbar will be injected here -->
+  <div id="navbar-placeholder"></div>
+
+  <main id="main-content" style="padding-top: 8rem; padding-bottom: 5rem;">
+    <div class="container">
+      
+
+
+      <div class="dashboard-layout">
+        
+        <!-- Sidebar Profile -->
+        <aside class="profile-card">
+          <div class="profile-avatar" id="dash-avatar">U</div>
+          <h2 class="profile-name" id="dash-name">User Name</h2>
+          <p class="profile-email" id="dash-email">user@example.com</p>
+
+          <div id="status-badge-container">
+            <span class="status-badge" id="dash-status">Loading...</span>
+          </div>
+
+          <div class="plan-details">
+            <div class="plan-details-row">
+              <strong style="color: var(--text-primary);">Membership Tier:</strong>
+              <span id="dash-plan-name" class="text-gold">Basic</span>
+            </div>
+            <div class="plan-details-row" id="dash-expiry-row" style="display: none;">
+              <strong style="color: var(--text-primary);">Valid Until:</strong>
+              <span id="dash-plan-expiry">N/A</span>
+            </div>
+          </div>
+
+          <div style="margin-top: var(--space-8);" id="dash-action">
+            <!-- Will be populated with upgrade button if inactive -->
+          </div>
+        </aside>
+
+        <!-- Main Content Box -->
+        <div class="dashboard-content">
+          
+          <!-- Upcoming Classes -->
+          <section>
+            <div class="dashboard-section-header">
+              <h3>Upcoming <span class="text-gold">Reservations</span></h3>
+              <a href="/pages/classes.html" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Book a Class</a>
+            </div>
+            
+            <div class="booking-list" id="dash-bookings-container">
+              <!-- Bookings injected here dynamically -->
+              <div class="empty-state">
+                <p style="margin-bottom: var(--space-4);">Loading your itinerary...</p>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+</body>
+</html>

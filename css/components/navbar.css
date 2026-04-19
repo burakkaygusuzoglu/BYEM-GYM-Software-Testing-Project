@@ -1,0 +1,131 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--glass-border);
+  transition: background-color var(--transition-normal),
+              transform var(--transition-normal);
+}
+
+.navbar--scrolled {
+  background-color: var(--bg-obsidian);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+.navbar__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 5rem;
+}
+
+.navbar__logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.navbar__logo span {
+  color: var(--accent-gold);
+}
+
+.navbar__menu {
+  display: flex;
+  gap: var(--space-6);
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.navbar__link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+  position: relative;
+}
+
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-gold);
+  transition: width var(--transition-fast);
+}
+
+.navbar__link:hover {
+  color: var(--text-primary);
+}
+
+.navbar__link:hover::after,
+.navbar__link.active::after {
+  width: 100%;
+}
+
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--text-primary);
+  margin: 5px 0;
+  transition: var(--transition-fast);
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  .navbar__menu {
+    display: none;
+  }
+  .navbar__actions {
+    display: none;
+  }
+  .navbar__menu.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-obsidian);
+    padding: var(--space-6) 0;
+    align-items: center;
+    border-bottom: 1px solid var(--glass-border);
+  }
+  .navbar__actions.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: calc(5rem + 250px);
+    width: 100%;
+    background-color: var(--bg-obsidian);
+    padding-bottom: var(--space-6);
+  }
+}

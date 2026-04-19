@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/main.css">
+  <script type="module" src="/js/core/app.js" defer></script>
+  <script type="module" src="/js/pages/payment.js" defer></script>
+  <title>Checkout | BYEM GYM</title>
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <main id="main-content" style="padding-top: 8rem; padding-bottom: 5rem;">
+    <div class="container">
+      
+      <div class="payment-wrapper">
+        
+        <!-- Summary Side -->
+        <div class="payment-summary">
+          <div class="payment-summary-header">
+            <h3>Order Summary</h3>
+            <p class="text-secondary">Review your membership details.</p>
+          </div>
+
+          <div class="payment-row">
+            <span id="summary-plan-text">Plan Name</span>
+            <span class="text-primary" id="summary-plan-price">$0.00</span>
+          </div>
+
+          <div class="payment-row">
+            <span>Taxes & Fees</span>
+            <span>$0.00</span>
+          </div>
+
+          <div class="payment-total">
+            <span>Total Billed Today</span>
+            <span class="text-gold" id="summary-total-price">$0.00</span>
+          </div>
+        </div>
+
+        <!-- Form Side -->
+        <div class="payment-form-card" style="background-color: var(--surface-elevated);">
+          <h3 style="margin-bottom: var(--space-6);">Payment Data (Mock)</h3>
+          
+
+
+          <form id="paymentForm" novalidate>
+            <div class="form-group">
+              <label class="form-label" for="cardName">Cardholder Name</label>
+              <input type="text" id="cardName" class="form-control" placeholder="JOHN DOE" required>
+              <span class="form-error-msg" id="err-name">Name is required.</span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="cardNumber">Card Number</label>
+              <input type="text" id="cardNumber" class="form-control" placeholder="0000 0000 0000 0000" maxlength="19" required>
+              <span class="form-error-msg" id="err-num">Must be 16 numeric digits.</span>
+            </div>
+
+            <div class="grid-2-cols" style="margin-bottom: var(--space-6);">
+              <div class="form-group">
+                <label class="form-label" for="cardExpiry">Expiry (MM/YY)</label>
+                <input type="text" id="cardExpiry" class="form-control" placeholder="MM/YY" maxlength="5" required>
+                <span class="form-error-msg" id="err-exp">Invalid Format.</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="cardCvv">CVV / CVC</label>
+                <input type="password" id="cardCvv" class="form-control" placeholder="123" maxlength="4" required>
+                <span class="form-error-msg" id="err-cvv">Must be 3-4 digits.</span>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" id="payButton">Complete Secure Checkout</button>
+          </form>
+
+          <!-- Loader element to swap in during 'processing' -->
+          <div id="payment-loader" class="payment-loader">
+            <div class="spinner"></div>
+            <p class="text-gold">Processing with Secure Gateway...</p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+</body>
+</html>
