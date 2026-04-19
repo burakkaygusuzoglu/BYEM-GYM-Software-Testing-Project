@@ -1,50 +1,157 @@
-# BYEM GYM - Premium Gym Management System
+# 🏋️ BYEM GYM Software Testing & Quality Assurance Project
 
-## Overview
-BYEM GYM is a premium, web-based gym management system built entirely with **Vanilla HTML, CSS, and ES6 JavaScript**. It features a custom glassmorphism design system and relies on HTML5 `localStorage` as a mock database. The project was designed from the ground up without any external libraries or frameworks (No React, Vue, Bootstrap, or Tailwind).
+> Comprehensive QA project for the **BYEM GYM Web-Based Management System**, covering **manual testing, defect reporting, Selenium automation, and Apache JMeter performance testing**.
 
-This application handles user authentication, membership subscriptions, class scheduling capabilities, and features a fully functional Administrative CRUD interface.
+---
 
-## Core Features
-1. **Public Marketing Pages**: High-end landing, memberships, classes, and contact pages.
-2. **Secure Authentication**: End-to-end user registration and login with mock hashed passwords.
-3. **Role-Based Access Control**: `guard.js` route interceptor protecting member and admin dashboards.
-4. **Subscription System**: Payment simulator that activates member profiles algorithmically.
-5. **Booking Engine**: Dynamic class scheduling, capacity limits, and duplicate-booking prevention.
-6. **Member Dashboard**: Personalized hub for users to view active memberships and cancel their booked classes.
-7. **Admin Portal**: A dedicated CRUD interface for administrators to manage the class schedule and delete member accounts.
+## 📌 Project Overview
 
-## Tech Stack
-*   **Structure:** HTML5 (Multi-Page Architecture)
-*   **Styling:** CSS3 (Custom Properties, Grid/Flexbox, Glassmorphism UI)
-*   **Logic:** Vanilla ES6 JavaScript (Native Modules)
-*   **Persistence:** LocalStorage API
+This repository contains a complete **Software Quality Assurance & Testing Project** conducted for the BYEM GYM web application.
 
-## How to Run the Project
-1. Clone or download this repository.
-2. Open the project folder in Visual Studio Code.
-3. Install the **Live Server** extension (by Ritwick Dey).
-4. Right-click on `index.html` and select **"Open with Live Server"**.
-5. The application will safely launch and route securely.
+The goal of this project was to evaluate the system’s quality, reliability, functionality, and performance using industry-standard testing practices.
 
-## Default Accounts
-Upon launching the application for the first time, the `Store.js` engine automatically seeds the following Admin credentials in your browser's LocalStorage:
-*   **Admin Email:** `admin@byemgym.com`
-*   **Admin Password:** `admin123`
+The project includes:
 
-You can freely register standard user accounts dynamically via the `/pages/auth/register.html` UI.
+✅ Test Planning  
+✅ Functional Test Cases  
+✅ Bug Reporting  
+✅ Selenium Automation Testing  
+✅ Apache JMeter Performance Testing  
+✅ Final QA Evaluation Report
 
-## Architecture
-```text
-├── assets/         # Images, icons, and static media
-├── css/            # Custom CSS System (Variables, Layouts, Pages)
-├── docs/           # Software Testing and Project Documentation
-├── js/
-│   ├── components/ # Dynamic DOM Injectors (Navbar, Footer)
-│   ├── core/       # Global utilities (Guard route protection)
-│   ├── data/       # LocalStorage wrapper (Store.js)
-│   ├── pages/      # Page-specific controllers
-│   └── services/   # Business logic (Auth, Booking, Membership)
-├── pages/          # HTML Views (Dashboards, Auth, Member, Admin)
-└── index.html      # Main Entry Point
-```
+---
+
+## 🖥️ System Under Test
+
+**BYEM GYM Web-Based Management System** is a fitness management platform designed for gym members and administrators.
+
+Main features include:
+
+- User Registration
+- Secure Login System
+- Membership Plan Selection
+- Booking Classes
+- Reservation Management
+- Dashboard Access
+- Role-Based Navigation
+
+---
+
+# 🧪 Testing Scope
+
+The following software modules were tested:
+
+| Module | Test Coverage |
+|--------|---------------|
+| Registration | Input validation, duplicate account checks |
+| Login | Valid / invalid authentication |
+| Membership | Plan selection workflow |
+| Booking | Reservation process, duplicate booking |
+| Dashboard | Access behavior and usability |
+| UI/UX | Layout consistency and message visibility |
+
+---
+
+# 📋 Manual Testing
+
+A structured set of functional and negative test cases were designed and executed.
+
+### Example Test Cases
+
+- Valid User Registration
+- Existing Email Registration
+- Valid Login
+- Wrong Password Login
+- Membership Plan Selection
+- Successful Payment Flow
+- Booking with Active Membership
+- Duplicate Booking Attempt
+- Cancel Booking
+- Guest Access Restriction
+
+---
+
+# 🐞 Bug Reporting
+
+Realistic defects were documented with severity classification and reproduction steps.
+
+### Sample Reported Issues
+
+- Footer layout appears visually incomplete
+- Error messages displayed far from form area
+- Seat availability counter unclear to users
+- Zoom/responsive layout inconsistency
+
+Each bug report includes:
+
+- Severity
+- Priority
+- Reproduction Steps
+- Expected Result
+- Actual Result
+- Screenshot Evidence
+
+---
+
+# 🤖 Automation Testing
+
+Automation testing was implemented using **Selenium WebDriver**.
+
+### Executed Automated Scenarios
+
+| ID | Scenario | Result |
+|----|----------|--------|
+| AT-01 | Valid Login Test | ✅ Passed |
+| AT-02 | Invalid Login Test | ✅ Passed |
+| AT-03 | Duplicate Registration Test | ✅ Passed |
+
+### Benefits Achieved
+
+- Reduced repetitive manual execution
+- Faster regression checks
+- Reliable authentication validation
+
+---
+
+# ⚡ Performance Testing
+
+Basic load testing was performed using **Apache JMeter**.
+
+### Test Scenario
+
+- Target: Login Page
+- Virtual Users: 20
+- Ramp-Up Time: 5 seconds
+- Request Type: HTTP GET
+
+### Result
+
+✅ Stable performance under light concurrent traffic  
+✅ No major failures observed
+
+---
+
+# 🛠️ Tools & Technologies
+
+- **Manual Testing**
+- **Selenium WebDriver**
+- **Apache JMeter**
+- **Google Chrome**
+- **HTML / CSS / JavaScript**
+- **VS Code**
+
+---
+
+# 📂 Repository Structure
+
+```bash
+BYEM-GYM-Software-Testing-Project/
+│── README.md
+│── Test_Plan.docx
+│── Final_Test_Report.docx
+│── automation/
+│   ├── test_login.py
+│   ├── test_invalid_login.py
+│   └── test_duplicate_registration.py
+│── screenshots/
+│── jmeter/
